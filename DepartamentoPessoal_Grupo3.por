@@ -5,14 +5,17 @@
 //4- Verificar se o límite maximo de 100 ja foi atingido
 //5- Editar colaboradores 
 		
-programa{
-		inclua biblioteca Matematica --> m
-		inclua biblioteca Tipos --> t
-		inclua biblioteca Util --> u
-		const inteiro Vcadastro = 2
-		const inteiro Vlinha = 2
-		const inteiro Vcoluna = 4
-	funcao inicio(){
+programa
+{
+	
+	inclua biblioteca Matematica --> m
+	inclua biblioteca Tipos --> t
+	inclua biblioteca Util --> u
+	const inteiro Vcadastro = 2
+	const inteiro Vlinha = 2
+	const inteiro Vcoluna = 4
+	funcao inicio()
+{
 		cadeia MatrizGeral[Vlinha][Vcoluna]
 		menu(MatrizGeral)
 		
@@ -196,6 +199,7 @@ programa{
 	  }	
 	  menu(matriz)
 	}
+}
 }
 /* $$$ Portugol Studio $$$ 
  * 

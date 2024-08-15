@@ -2,13 +2,13 @@ programa {
     inclua biblioteca Matematica --> m
     inclua biblioteca Tipos --> t
     inclua biblioteca Util --> u
-
+    const inteiro Vcadastro = 2
     const inteiro Vlinha = 2
     const inteiro Vcoluna = 6
 
     cadeia cpf
     real hrEntra[Vlinha] // Vetor para armazenar horas de entrada
-    real hrSaida[Vlinha] // Vetor para armazenar horas de saída
+    real hrSaida[Vlinha] // Vetor para armazenar horas de saï¿½da
 
     funcao inicio() {
         cadeia MatrizGeral[Vlinha][Vcoluna]
@@ -29,7 +29,7 @@ programa {
                 escreva("Escreva o CPF do colaborador que deseja cadastrar: ")
                 leia(CPF)
                 u.aguarde(200)
-                escreva("Escreva o salário do colaborador que deseja cadastrar: ")
+                escreva("Escreva o salï¿½rio do colaborador que deseja cadastrar: ")
                 leia(Salario)
                 u.aguarde(200)
                 limpa()
@@ -38,8 +38,8 @@ programa {
                 matriz[i][1] = nome
                 matriz[i][2] = Salario
                 matriz[i][3] = "0"
-                matriz[i][4] = "0" // Horário de entrada inicial
-                matriz[i][5] = "0" // Horário de saída inicial
+                matriz[i][4] = "0" // Horï¿½rio de entrada inicial
+                matriz[i][5] = "0" // Horï¿½rio de saï¿½da inicial
                 cadastrou = verdadeiro
             }
             se(cadastrou == verdadeiro) {
@@ -48,7 +48,7 @@ programa {
             }
         }
         se(cadastrou == falso) {
-            escreva("Não foi possível cadastrar, sistema cheio")
+            escreva("Nï¿½o foi possï¿½vel cadastrar, sistema cheio")
         }
         menu(matriz)
     }
@@ -73,7 +73,7 @@ programa {
         escreva("\n4- Editar")
         u.aguarde(500)
         escreva("\n5- Sair")
-        escreva("\nEscolha uma opção: ")
+        escreva("\nEscolha uma opï¿½ï¿½o: ")
         leia(opcao)
         limpa()
 
@@ -99,7 +99,7 @@ programa {
                 pare
 
             caso contrario:
-                escreva("Escolha uma opção válida!\n")
+                escreva("Escolha uma opï¿½ï¿½o vï¿½lida!\n")
                 u.aguarde(500)    
                 menu(matriz)     
         }
@@ -116,7 +116,7 @@ programa {
         para(inteiro i = 0; i < Vlinha; i++) {
             se(resposta == matriz[i][0]) {
                 faca {
-                    escreva("\n1. Nome\n2. CPF\n3. Salário\n4. Voltar para o menu\nQual informação do colaborador(a) ", matriz[i][1], " você deseja editar?")
+                    escreva("\n1. Nome\n2. CPF\n3. Salï¿½rio\n4. Voltar para o menu\nQual informaï¿½ï¿½o do colaborador(a) ", matriz[i][1], " vocï¿½ deseja editar?")
                     leia(opcao)
 
                     escolha(opcao) {
@@ -134,21 +134,21 @@ programa {
                             escreva("\nO CPF do colaborador foi editado com sucesso para ", CPF, " Boa sorte!!")
                             pare
 
-                        caso 3: // Edita salário
-                            escreva("\nEscreva o novo salário do colaborador: R$")
+                        caso 3: // Edita salï¿½rio
+                            escreva("\nEscreva o novo salï¿½rio do colaborador: R$")
                             leia(Salario)
                             matriz[i][2] = Salario
-                            escreva("\nO novo salário é de: R$", Salario)
+                            escreva("\nO novo salï¿½rio ï¿½ de: R$", Salario)
                             pare
 
                         caso 4:
                             menu(matriz)
                             pare
                     }
-                    escreva("\nVocê deseja continuar editando? (S/N) ")
+                    escreva("\nVocï¿½ deseja continuar editando? (S/N) ")
                     leia(quereditar)
                     enquanto(quereditar != 'S' e quereditar != 's' e quereditar != 'n' e quereditar != 'N') {
-                        escreva("\nInsira um caractere válido (S/N): ")
+                        escreva("\nInsira um caractere vï¿½lido (S/N): ")
                         leia(quereditar)
                     }
                 } enquanto (quereditar == 's' ou quereditar == 'S')
@@ -173,11 +173,11 @@ programa {
                 }
             }
             se(resposta == "") {
-                escreva("Não foi encontrado nenhum colaborador com esse CPF :c")
+                escreva("Nï¿½o foi encontrado nenhum colaborador com esse CPF :c")
                 escreva("\nDeseja pesquisar novamente? (S/N): ")
                 leia(querpesquisar)
                 enquanto(querpesquisar != 'S' e querpesquisar != 's' e querpesquisar != 'n' e querpesquisar != 'N') {
-                    escreva("\nInsira um caractere válido (S/N): ")
+                    escreva("\nInsira um caractere vï¿½lido (S/N): ")
                     leia(querpesquisar)
                 }
             }
@@ -198,7 +198,7 @@ programa {
     funcao ponto(cadeia &matriz[][]) {
         inteiro res
         escreva("FOLHA DE PONTO")
-        escreva("\nVocê quer marcar entrada ou saída? [1] para entrada, [2] para saída, [3] folha de ponto, [4] Voltar ao menu\n")
+        escreva("\nVocï¿½ quer marcar entrada ou saï¿½da? [1] para entrada, [2] para saï¿½da, [3] folha de ponto, [4] Voltar ao menu\n")
         leia(res)
         escolha(res) {
             caso 1:
@@ -213,13 +213,13 @@ programa {
                         leia(hr)
                         hrEntra[i] = hr
                         matriz[i][4] = hrEntra[i] + ""
-                        escreva("Ponto de entrada marcado com sucesso \nHorário de entrada: ", hrEntra[i], "\n")
+                        escreva("Ponto de entrada marcado com sucesso \nHorï¿½rio de entrada: ", hrEntra[i], "\n")
                         ponto(matriz)
                         pare
                     }
                 }
                 se(encontrado == falso) {
-                    escreva("CPF INVÁLIDO!\n")
+                    escreva("CPF INVï¿½LIDO!\n")
                     ponto(matriz)
                 }
                 pare
@@ -232,17 +232,17 @@ programa {
                 para(inteiro i = 0; i < Vlinha; i++) {
                     se(matriz[i][0] == cpf) {
                         encontrado = verdadeiro
-                        escreva("Hora de saída: ")
+                        escreva("Hora de saï¿½da: ")
                         leia(hr)
                         hrSaida[i] = hr
                         matriz[i][5] = hrSaida[i] + ""
-                        escreva("Ponto de saída marcado com sucesso\nHorário de saída: ", hrSaida[i], "\n")
+                        escreva("Ponto de saï¿½da marcado com sucesso\nHorï¿½rio de saï¿½da: ", hrSaida[i], "\n")
                         ponto(matriz)
                         pare
                     }
                 }
                 se(encontrado == falso) {
-                    escreva("CPF INVÁLIDO!\n")
+                    escreva("CPF INVï¿½LIDO!\n")
                     ponto(matriz)
                 }
                 pare
@@ -260,7 +260,7 @@ programa {
     funcao cargaHora(cadeia &matriz[][]) {
         real totalHora
         real hrExtra
-        escreva("Qual o CPF do funcionário: ")
+        escreva("Qual o CPF do funcionï¿½rio: ")
         leia(cpf)
         logico encontrado = falso
         para(inteiro i = 0; i < Vlinha; i++) {
@@ -268,13 +268,13 @@ programa {
                 encontrado = verdadeiro
                 totalHora = hrSaida[i] - hrEntra[i]
                 hrExtra = totalHora - 8
-                escreva("Funcionário: ", matriz[i][1], "\nHoras trabalhadas: ", totalHora, "\nHoras extras: ", hrExtra, "\n")
+                escreva("Funcionï¿½rio: ", matriz[i][1], "\nHoras trabalhadas: ", totalHora, "\nHoras extras: ", hrExtra, "\n")
                 ponto(matriz)
                 pare
             }
         }
         se(encontrado == falso) {
-            escreva("\nCPF INVÁLIDO\n")
+            escreva("\nCPF INVï¿½LIDO\n")
             cargaHora(matriz)
         }
     }
