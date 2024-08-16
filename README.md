@@ -1,6 +1,6 @@
 # Projeto Final de Lógica de Programação: Departamento Pessoal
 Descrição
-Este projeto é o trabalho final do curso de Lógica de Programação, desenvolvido utilizando o Portugol Studio. O objetivo do projeto é criar um sistema de gerenciamento de pessoal para uma empresa fictícia, permitindo o cadastro, consulta, atualização e exclusão de funcionários.
+Este projeto é o trabalho final do curso de Lógica de Programação, desenvolvido utilizando o Portugol Studio. O objetivo do projeto é criar um sistema de gerenciamento de pessoal para uma empresa fictícia, permitindo o cadastro, consulta e atualização.
 
 ## Funcionalidades
 O sistema possui as seguintes funcionalidades:
