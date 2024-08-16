@@ -35,12 +35,12 @@ Siga as instruções na tela para interagir com o sistema.
 Contribuidores
 Este projeto foi desenvolvido em grupo pelos seguintes alunos:
 
-Luiz Fernando Francedino Chagas
-Murilo Bongard Nicolau
-Lucas Gomes Coco da Silva
-Pedro Lucas da Silva Benvindo
-João Gabriel Tavares Siqueira
-Gustavo Cordeiro Santos
+Luiz Fernando Francedino Chagas; 
+Murilo Bongard Nicolau; 
+Lucas Gomes Coco da Silva; 
+Pedro Lucas da Silva Benvindo; 
+João Gabriel Tavares Siqueira; 
+Gustavo Cordeiro Santos.
 
 ### Licença
 Este projeto é destinado exclusivamente ao uso acadêmico e está disponível sob a licença XYZ.
