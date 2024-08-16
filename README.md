@@ -5,18 +5,19 @@ Este projeto é o trabalho final do curso de Lógica de Programação, desenvolv
 ## Funcionalidades
 O sistema possui as seguintes funcionalidades:
 
-Cadastro de Funcionários: Permite cadastrar novos funcionários, incluindo dados como nome, CPF, cargo e salário.
-Consulta de Funcionários: Permite buscar e visualizar as informações de funcionários cadastrados.
-Atualização de Dados: Permite atualizar as informações de funcionários já cadastrados.
-Exclusão de Funcionários: Permite remover o cadastro de funcionários do sistema.
-Estrutura do Código
-O código está organizado da seguinte forma:
+## Cadastro de Funcionários: Permite cadastrar novos funcionários, incluindo dados como nome, CPF, cargo e salário.
+## Consulta de Funcionários: Permite buscar e visualizar as informações de funcionários cadastrados.
+## Atualização de Dados: Permite atualizar as informações de funcionários já cadastrados.
+## Estrutura do Código
+## O código está organizado da seguinte forma:
 
-Variáveis Globais: Armazenam os dados dos funcionários.
+## Variáveis Globais: Armazenam os dados dos funcionários.
+
 Funções: Cada funcionalidade principal (cadastro, consulta, atualização, exclusão) é implementada em funções separadas, facilitando a manutenção e compreensão do código.
+
 Menu Principal: Um loop que exibe o menu de opções e executa a função correspondente conforme a escolha do usuário.
-Requisitos
-Para executar o projeto, é necessário:
+## Requisitos
+   Para executar o projeto, é necessário:
 
 ## Portugol Studio: Ferramenta de desenvolvimento que permite escrever e executar código em Portugol.
 Como Executar
