@@ -2,10 +2,10 @@
 Descrição
 Este projeto é o trabalho final do curso de Lógica de Programação, desenvolvido utilizando o Portugol Studio. O objetivo do projeto é criar um sistema de gerenciamento de pessoal para uma empresa fictícia, permitindo o cadastro, consulta e atualização.
 
-## Funcionalidades
+### Funcionalidades
 O sistema possui as seguintes funcionalidades:
 
-## Cadastro de Funcionários: 
+### Cadastro de Funcionários: 
 Permite cadastrar novos funcionários, incluindo dados como nome, CPF, cargo e salário.
 ## Consulta de Funcionários: 
 Permite buscar e visualizar as informações de funcionários cadastrados.
@@ -14,17 +14,17 @@ Permite atualizar as informações de funcionários já cadastrados.
 ## Estrutura do Código
  O código está organizado da seguinte forma:
 
-## Variáveis Globais: 
+### Variáveis Globais: 
 Armazenam os dados dos funcionários.
 
-## Funções:  
+### Funções:  
 Cada funcionalidade principal (cadastro, consulta, atualização, exclusão) é implementada em funções separadas, facilitando a manutenção e compreensão do código.
 
 Menu Principal: Um loop que exibe o menu de opções e executa a função correspondente conforme a escolha do usuário.
-## Requisitos
+### Requisitos
    Para executar o projeto, é necessário:
 
-## Portugol Studio: 
+### Portugol Studio: 
 Ferramenta de desenvolvimento que permite escrever e executar código em Portugol.
 Como Executar
 Abra o Portugol Studio.
