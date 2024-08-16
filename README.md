@@ -7,11 +7,11 @@ O sistema possui as seguintes funcionalidades:
 
 ### Cadastro de Funcionários: 
 Permite cadastrar novos funcionários, incluindo dados como nome, CPF, cargo e salário.
-## Consulta de Funcionários: 
+### Consulta de Funcionários: 
 Permite buscar e visualizar as informações de funcionários cadastrados.
-## Atualização de Dados: 
+### Atualização de Dados: 
 Permite atualizar as informações de funcionários já cadastrados.
-## Estrutura do Código
+### Estrutura do Código
  O código está organizado da seguinte forma:
 
 ### Variáveis Globais: 
@@ -31,13 +31,18 @@ Abra o Portugol Studio.
 Importe o arquivo DepartamentoPessoal_Grupo3(VERSÃO 2).por.
 Execute o projeto clicando em "Executar" no menu superior ou pressionando F9.
 Siga as instruções na tela para interagir com o sistema.
+
 Contribuidores
 Este projeto foi desenvolvido em grupo pelos seguintes alunos:
 
-Nome 1
-Nome 2
-Nome 3
-## Licença
+Luiz Fernando Francedino Chagas
+Murilo Bongard Nicolau
+Lucas Gomes Coco da Silva
+Pedro Lucas da Silva Benvindo
+João Gabriel Tavares Siqueira
+Gustavo Cordeiro Santos
+
+### Licença
 Este projeto é destinado exclusivamente ao uso acadêmico e está disponível sob a licença XYZ.
 
 Esse modelo cobre as informações básicas e organiza o README de forma a ser informativo e fácil de seguir. Você pode ajustar os detalhes conforme o conteúdo específico do seu projeto e as exigências do curso. Se precisar de ajuda para extrair mais detalhes do código, posso ajudar a analisar o arquivo que você enviou.
