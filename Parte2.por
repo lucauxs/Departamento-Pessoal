@@ -60,11 +60,6 @@ programa
 		se (inssTotal > contribuicaoTeto){
 			inssTotal = contribuicaoTeto
 		}
-		
-		
-
-		
-		
 	retorne inssTotal
 	}
 	
@@ -128,9 +123,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 0; 
+ * @POSICAO-CURSOR = 94; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {salarioLiquido, 5, 6, 14}-{salarioBrutoReal, 6, 6, 16}-{liquido, 10, 7, 7}-{salarioBruto, 19, 37, 12}-{inss, 29, 7, 4}-{contribuicaoTeto, 29, 18, 16}-{parcelaDeduzir, 29, 41, 14}-{aliquota, 29, 62, 8}-{inssTotal, 29, 77, 9}-{salarioInss, 71, 31, 11}-{salarioSemInss, 73, 7, 14}-{aliquota, 29, 62, 8}-{parcelaDeduzir, 29, 41, 14}-{irrfTotal, 74, 43, 9}-{dependentes, 75, 7, 11};
+ * @SIMBOLOS-INSPECIONADOS = {salarioLiquido, 5, 6, 14}-{salarioBrutoReal, 6, 6, 16}-{liquido, 10, 7, 7}-{salarioBruto, 19, 37, 12}-{inss, 29, 7, 4}-{contribuicaoTeto, 29, 18, 16}-{parcelaDeduzir, 29, 41, 14}-{aliquota, 29, 62, 8}-{inssTotal, 29, 77, 9}-{salarioInss, 66, 31, 11}-{salarioSemInss, 68, 7, 14}-{irrfTotal, 69, 43, 9}-{dependentes, 70, 7, 11};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
