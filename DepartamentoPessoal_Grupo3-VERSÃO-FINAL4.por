@@ -13,10 +13,11 @@ programa{
 	real saida[maxColaboradores]
 	real horaTotal[maxColaboradores]
 	real horaExtra[maxColaboradores]
-	caracter resposta// Respota agora é caracter assim aceita numeros e letras 
-	caracter escolher
+	
+	
     	funcao inicio(){// tirei a opcao do loop, mas sempre que digitarem errado volta para a funçao
-		
+		caracter resposta// Respota agora é caracter assim aceita numeros e letras 
+		caracter escolher
 		escreva("MENU DEPARTAMENTO PESSOAL")
 		escreva(".")
 		u.aguarde(500)
@@ -93,6 +94,7 @@ programa{
         	
     	}
 	funcao cadastrarColaborador(){
+		caracter escolher3
 		se (total_colaboradores >= maxColaboradores){
 			escreva("Limite de colaboradores atingido!\n")
         	}
@@ -134,12 +136,12 @@ programa{
 			u.aguarde(500)
 	          escreva("\n\n[1] para sim [2] para não \n")
 			escreva("\nDigite: ")
-	       	leia(escolher)
+	       	leia(escolher3)
 	       	
-	       	se (escolher == '1'){
+	       	se (escolher3 == '1'){
 	       		cadastrarColaborador()       		
 	       	}
-			senao se (escolher == '2'){//adcionei funçao de confirmaçao de saida diminuindo a linha de codigo
+			senao se (escolher3 == '2'){//adcionei funçao de confirmaçao de saida diminuindo a linha de codigo
 				inicioSair()
 			}			
 			senao{
@@ -155,8 +157,8 @@ programa{
     }
     	funcao editarColaborador(){
 		cadeia cpf
-        	inteiro indice = -1
-		inteiro res
+		caracter escolher1, escolher2
+        	inteiro indice = -1		
 		se (total_colaboradores == 0){
 			limpa()
 			escreva("*Nenhum colaborador encontrado para concluir a edição.*")
@@ -183,16 +185,16 @@ programa{
 				u.aguarde(500)
 				escreva("\nOque deseja editar:\n[1] Nome [2] CPF [3] Salario")//adicionado opção para escolher oq qr edita 
 				escreva("\nDigite: ")
-				leia(escolher)
-				se(escolher =='1'){
+				leia(escolher2)
+				se(escolher2 =='1'){
 					escreva("\nDigite o novo nome: ")
 					leia(nomes[indice])
 				}
-				senao se(escolher =='2'){
+				senao se(escolher2 =='2'){
 					escreva("\nDigite o novo CPF: ")
 					leia(cpfs[indice])
 				}	
-				senao se(escolher =='3'){
+				senao se(escolher2 =='3'){
 					escreva("\nDigite o novo salario: ")
 					leia(salarios[indice])
 				}
@@ -217,8 +219,8 @@ programa{
 	 	escreva("Dejesar editar outro colaborador ?\n[1] para sim [2] para não ")
 	 	u.aguarde(500)
 	 	escreva("\nDigite: ")
-	 	leia(escolher)
-	 	se(escolher =='1'){
+	 	leia(escolher1)
+	 	se(escolher1 =='1'){
 	 		editarColaborador()
 	 	}
 	 	senao{
@@ -303,7 +305,8 @@ programa{
 	funcao registrarPonto() {
 		cadeia cpf
 		inteiro indice = -1
-		real hr_entrada, hr_saida, hr_total,hr_extra,res
+		real hr_entrada, hr_saida, hr_total,hr_extra
+		caracter res
 		limpa()
         
 		se (total_colaboradores == 0){
@@ -350,14 +353,13 @@ programa{
 	            	horaExtra[indice] = hr_extra
 	            
 	            	escreva("Ponto registrado com sucesso!\n")
-	            	u.aguarde(500)
-	            	
+	            	u.aguarde(500)	            	
 	        	}
 			escreva("\n\nDejesar Registra novo ponto?\n[1] para sim [2] para não ")
 		 	u.aguarde(500)
 		 	escreva("\nDigite: ")
 		 	leia(res)
-		 	se(res ==1){
+		 	se(res == '1'){
 		 		registrarPonto()	 		
 		 	}
 		 	senao{
@@ -392,13 +394,14 @@ programa{
 		inicioSair()
     }
 	funcao inicioSair(){//funçao nova para confirma ser deseja sair ou retornar
-		caracter escolherCadeia
+		caracter escolher5,escolher4
+		
 		escreva("\n\nDeseja retornar ao MENU DEPARTAMENTO PESSOAL?")
 		u.aguarde(400)
           escreva("\n[1] para retornar // [2] para sair\n")
 		escreva("\nDigite: ")
-          leia(escolher)		
-		escolha(escolher){
+          leia(escolher4)		
+		escolha(escolher4){
 		caso '1':
   			escreva("\nRedirecionando...")
   			u.aguarde(600)
@@ -411,8 +414,8 @@ programa{
             	u.aguarde(400)
             	escreva("\n[1] para retornar // [2] para sair")
             	escreva("\nDigite: ")
-            	leia(escolherCadeia)
-            	escolha(escolherCadeia){
+            	leia(escolher5)
+            	escolha(escolher5){
             	caso '1' :
             		escreva("\n\nRedirecionando para o Menu Departamento Pessoal...")
             		u.aguarde(1000)
@@ -452,7 +455,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 13526; 
+ * @POSICAO-CURSOR = 12735; 
+ * @DOBRAMENTO-CODIGO = [17, 95, 157, 229, 271, 287, 304, 369, 379];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
