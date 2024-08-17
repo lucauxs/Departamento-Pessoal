@@ -1,12 +1,13 @@
 programa{
+// Bibliotecas
 	inclua biblioteca Matematica --> m
 	inclua biblioteca Util --> u
 	inclua biblioteca Tipos --> t
 
-    	// Constantes
-    	const inteiro maxColaboradores = 5  // Aumentando o limite de números
+// Constantes
+	const inteiro maxColaboradores = 5  // Aumentando o limite de números
 
-    	// Variáveis globais
+// Variáveis globais
 	inteiro total_colaboradores = 0
 	cadeia nomes[maxColaboradores]
 	cadeia cpfs[maxColaboradores]
@@ -16,33 +17,32 @@ programa{
 	real horaTotal[maxColaboradores]
 	inteiro resposta = 0 
 
-    	funcao inicio(){
-		// Agora utilizando a função para verificar a resposta
-		cadeia escolher
-        	
-		enquanto (resposta != 6){
-          	escreva("MENU DEPARTAMENTO PESSOAL")
-	            escreva(".")
-	            u.aguarde(600)
-	            escreva(".")
-	            u.aguarde(600)
-	            escreva(".\n")
-	            u.aguarde(600)
-	            escreva("\nO que deseja executar?")
-	            u.aguarde(700)
-	            escreva("\n1 - Cadastrar Colaborador\n")
-	            u.aguarde(300)
-	            escreva("2 - Editar Colaborador\n")
-	            u.aguarde(300)
-	            escreva("3 - Relatório de Folha de Pagamento\n")
-	            u.aguarde(300)
-	            escreva("4 - Registrar Ponto\n")
-	            u.aguarde(300)
-	            escreva("5 - Mostrar lista de colaboradores\n")
-	            u.aguarde(300)
-	            escreva("6 - Sair\n")
-	            u.aguarde(400)
-	            escreva("Escolha uma opção: ")
+	funcao inicio(){
+	
+	cadeia escolher
+	enquanto (resposta != 6){
+		escreva("MENU DEPARTAMENTO PESSOAL")
+		escreva(".")
+		u.aguarde(600)
+		escreva(".")
+		u.aguarde(600)
+		escreva(".\n")
+		u.aguarde(600)
+		escreva("\nO que deseja executar?")
+		u.aguarde(700)
+		escreva("\n1 - Cadastrar colaborador\n")
+		u.aguarde(300)
+		escreva("2 - Registrar Ponto\n")
+		u.aguarde(300)
+		escreva("3 - Mostrar lista de colaboradores\n")
+		u.aguarde(300)
+		escreva("4 - Editar colaborador\n")
+		u.aguarde(300)
+		escreva("5 - Relatório da folha de pagamento\n")
+		u.aguarde(300)
+		escreva("6 - Sair\n")
+		u.aguarde(400)
+		escreva("Escolha uma opção: ")
 	            
 	            
 
@@ -56,16 +56,16 @@ programa{
 				cadastrarColaborador()
                	pare
 			caso 2:
-           		editarColaborador()
+           		registrarPonto()
                	pare
            	caso 3:
-               	calcularFolhaPagamento() //adicionar  uma mensagem caso clicado sem colaboradores criados
+               	listaDeColaboradores()
                	pare
            	caso 4:
-               	registrarPonto()
+               	editarColaborador()
                	pare
            	caso 5:
-               	listaDeColaboradores()
+               	relatorioFolhaPagamento()
                	pare
            	caso 6:
                	u.aguarde(200)
@@ -110,73 +110,74 @@ programa{
 		
 		se (total_colaboradores >= maxColaboradores){
 			escreva("Limite de colaboradores atingido!\n")
-        	}
-        	senao{
-        		limpa()
-        		escreva("CADASTRO DE COLABORADORES\n\n")
-            	escreva("Digite o nome do novo colaborador: ")
-            	leia(nomes[total_colaboradores])
-            	
-            	escreva("Digite o CPF do novo colaborador: ")
-            	leia(cpfs[total_colaboradores])
-            	
-            	escreva("Digite o salário do novo colaborador: R$ ")
-            	leia(salarios[total_colaboradores])
-            	
-            	se (salarios[total_colaboradores] < 0){
-            		escreva("\nO salário digitado é negativo!")
-            		u.aguarde(1000)
-            		escreva("\nRecomeçando cadastro..")
-            		u.aguarde(1500)
-            		cadastrarColaborador()
-            	}
-            	senao se(salarios[total_colaboradores] > 0){
-	            	
-	            	entrada[total_colaboradores] = 0.0
-	            	saida[total_colaboradores] = 0.0
-	
-	            	total_colaboradores = total_colaboradores + 1
+		}
+		senao{
+			limpa()
+			escreva("CADASTRO DE COLABORADORES\n\n")
+			escreva("Digite o nome do novo colaborador: ")
+			
+		//se(nomes[total_colaboradores] = ){
+		//}
+			leia(nomes[total_colaboradores])
+
+			escreva("Digite o CPF do novo colaborador: ")
+			leia(cpfs[total_colaboradores])
+
+			escreva("Digite o salário do novo colaborador: R$ ")
+			leia(salarios[total_colaboradores])
+			se (salarios[total_colaboradores] < 0){
+				escreva("\nO salário digitado é negativo!")
+				u.aguarde(1000)
+				escreva("\nRecomeçando cadastro..")
+				u.aguarde(1500)
+				cadastrarColaborador()
+			}
+			senao se(salarios[total_colaboradores] > 0){
+
+				entrada[total_colaboradores] = 0.0
+				saida[total_colaboradores] = 0.0
+				
+				total_colaboradores = total_colaboradores + 1
 				
 				escreva("\nColaborador cadastrado com sucesso!\n")
 				u.aguarde(400)
 				escreva("\nDeseja cadastrar mais um colaborador? ")
 				u.aguarde(600)
-		          escreva("\n\nsim // nao\n")
+				escreva("\n\nsim // nao\n")
 				escreva("\nDigite: ")
-	            	leia(escolher)
-	            	
-	            	se (escolher == "sim" ou escolher == "SIM"){
-	            		cadastrarColaborador()
-	            		
-	            	}
-	  			senao se (escolher == "nao" ou  escolher == "NAO"){
-	  				escreva("\nRedirecionando...")
-	  				u.aguarde(600)
-	  				limpa()
-	  				
-	  			}
+				leia(escolher)
+			
+			se (escolher == "sim" ou escolher == "SIM"){
+				cadastrarColaborador()
+
+		}
+		senao se (escolher == "nao" ou  escolher == "NAO"){
+			escreva("\nRedirecionando...")
+			u.aguarde(600)
+			limpa()
+	  	}
 	  			
-	  			senao{
-	  				escreva("\nENTRADA INVALIDA!")
-	  				escreva("\nPOR FAVOR, DIGITE UMA ENTRADA VÁLIDA!")
-	  				u.aguarde(2500)
-	  				escreva("\n\nRedirecionando...")
-	  				u.aguarde(600)
-	  				limpa()
-	  				inicio()
-  			}
-            }
-            senao{
-            	escreva("\n\nOpção inválida! Tente novamente.\n")
-               	u.aguarde(2000)
-               	limpa()
-               	cadastrarColaborador()
-            }
-        }
+		senao{
+			escreva("\nENTRADA INVALIDA!")
+			escreva("\nPOR FAVOR, DIGITE UMA ENTRADA VÁLIDA!")
+			u.aguarde(2500)
+			escreva("\n\nRedirecionando...")
+			u.aguarde(600)
+			limpa()
+			inicio()
+		}
+		}
+		senao{
+			escreva("\n\nOpção inválida! Tente novamente.\n")
+			u.aguarde(2000)
+			limpa()
+			cadastrarColaborador()
+		}
+	}
     }
-    	funcao editarColaborador(){
+	funcao editarColaborador(){
 		cadeia cpf
-        	inteiro indice = -1
+		inteiro indice = -1
 
 		se (total_colaboradores == 0){
 			limpa()
@@ -189,60 +190,66 @@ programa{
 			limpa()
 			inicio()
 		}
-		limpa()
-		escreva("EDIÇÃO DE COLABORADORES\n\n")
-		escreva("Digite o CPF do colaborador para editar: ")
-		leia(cpf)
-
-	para (inteiro i = 0; i < total_colaboradores; i++){
-		se (cpfs[i] == cpf){
-     		indice = i
-			pare
-			}
-		}
-
-		se (indice == -1){
-			escreva("\n\nColaborador não encontrado!\n")
-			u.aguarde(1000)
-			escreva("\n\nRedirecionando para o Menu Departamento Pessoal...")
-			u.aguarde(2000)
 			limpa()
-		}
-        	senao{
-        		//escrever informações antigas do colaborador para depois:
+			escreva("EDIÇÃO DE COLABORADORES\n\n")
+			escreva("Digite o CPF do colaborador para editar: ")
+			leia(cpf)
+
+			para (inteiro i = 0; i < total_colaboradores; i++){
+				se (cpfs[i] == cpf){
+					indice = i
+				pare
+				}
+			}
+
+			se (indice == -1){
+				escreva("\n\nColaborador não encontrado!\n")
+				u.aguarde(1000)
+				escreva("\n\nRedirecionando para o Menu Departamento Pessoal...")
+				u.aguarde(2000)
+				limpa()
+			}
+			
+   		senao{
+        		
 			para (inteiro i = 0; i < maxColaboradores; i++){
 			
 				se(nomes[i] !=""){
-	
-		        	escreva("INFORMAÇÕES ANTERIORES:")
-				escreva("\nCpf: ",cpfs[i])
-				escreva("\nNome: ",nomes[i])
-				escreva("\nSalário: ",salarios[i]) 
-				u.aguarde(1000)
-	        		pare
+					escreva("\nINFORMAÇÕES ANTERIORES:")
+					escreva("\nCpf: ",cpfs[i])
+					escreva("\nNome: ",nomes[i])
+					escreva("\nSalário: ",salarios[i]) 
+					u.aguarde(1000)
+					pare
 				}
 			}
+			//adicionar menu de escolher qual alteração deseja fazer (deseja alterar nome, cpf, salario, etc)
+			escreva("\n")
 			escreva("\nDigite o novo nome: ")
 			leia(nomes[indice])
 			escreva("Digite o novo salário: R$")
 			leia(salarios[indice])
 			escreva("\n\nDados do colaborador atualizados com sucesso!\n")
-			
+			u.aguarde(1000)
 			escreva("\n\nRedirecionando para o Menu Departamento Pessoal...")
 			u.aguarde(2000)
 			limpa()
-	  
-	 	}
+  
+ 		}
     	}
-    	funcao calcularFolhaPagamento(){
+    	funcao relatorioFolhaPagamento(){
         	real salario_bruto, inss, irrf, salario_liquido
 		inteiro escolher
-		cadeia escolherCadeia
+		inteiro escolherInteiro
 		cadeia cpf
 		inteiro indice = -1
 		
 		
-		testarQntdColaboradores()
+		se (total_colaboradores == 0){
+			testarQntdColaboradores()
+		}
+		senao{
+			
 		
         	para (inteiro i = 0; i < total_colaboradores; i++){
         		salario_bruto = salarios[i]
@@ -269,7 +276,7 @@ programa{
 	          u.aguarde(400)
 	          limpa()
 	          
-		
+			
 			escreva("RELATÓRIO DA FOLHA DE PAGAMENTO")
             	escreva("\nColaborador:............... ", nomes[i])
             	escreva("\nCPF:....................... ", cpfs[i])
@@ -281,13 +288,13 @@ programa{
             	escreva("\nIRRF(Imposto de Renda):..R$", irrf)
             	escreva("\nSalário Líquido:.........R$", salario_liquido)
 			escreva("\n----------------------------------\n")
-			u.aguarde(2000)
+			u.aguarde(3000)
 			
 			
         	}
         		escreva("\n\nDeseja retornar ao MENU DEPARTAMENTO PESSOAL?")
 			u.aguarde(400)
-	          escreva("\n1 para retornar //\t 2 para sair\n")
+	          escreva("\n1 - retornar // 2 - sair\n")
 			escreva("\nDigite: ")
 	          leia(escolher)
 			
@@ -303,17 +310,22 @@ programa{
                	u.aguarde(200)
                	escreva("\n\nDeseja realmente sair do programa?")
 	            	u.aguarde(400)
-	            	escreva("\n\nretornar // sair\n")
+	            	escreva("\n\n1 - retornar // 2 - sair\n")
 	            	escreva("\nDigite: ")
-	            	leia(escolherCadeia)
-	            	se (escolherCadeia == "sair" ou escolherCadeia == "SAIR"){
+	            	leia(escolherInteiro)
+	            	se (escolherInteiro == 2){
 	            		escreva("Encerrando o programa...\n")
 	            		u.aguarde(1000)
 	            		resposta = 6 //puxar caso 6 da funcao inicio
 	            		limpa()
 	            		pare
 	            	}
-	            	
+	            	senao se(escolherInteiro == 1){
+	            		escreva("\nRedirecionando...")
+		  			u.aguarde(600)
+		  			limpa()
+		  			inicio()
+	            	}
 	  			senao{
 	  				escreva("\nENTRADA INVALIDA!")
 	  				escreva("\nPOR FAVOR, DIGITE UMA ENTRADA VÁLIDA!")
@@ -332,6 +344,7 @@ programa{
   				u.aguarde(600)
   				limpa()
   				inicio()
+    	  	}
     	  } 
     	}
     	funcao real calcularINSS(real salario_bruto){
@@ -377,7 +390,7 @@ programa{
 			testarQntdColaboradores()
 		}
      	senao{
- 		escreva("REGISTRAR PONTO")
+ 		escreva("REGISTRAR PONTO\n")
  		u.aguarde(1500)
  		escreva("\nDigite o CPF do colaborador: ")
 		leia(cpf)
@@ -388,7 +401,19 @@ programa{
 			pare
 			}
 		}
-
+		//escrever informações antigas do colaborador para depois:
+			para (inteiro i = 0; i < maxColaboradores; i++){
+			
+				se(nomes[i] !=""){
+	
+		        	escreva("\nINFORMAÇÕES DO COLABORADOR:")
+				escreva("\nCpf: ",cpfs[i])
+				escreva("\nNome: ",nomes[i])
+				u.aguarde(1000)
+	        		pare
+				}
+			}
+		
 		se (indice == -1){
 			escreva("\n\nColaborador não encontrado!\n")
 			u.aguarde(1000)
@@ -397,7 +422,7 @@ programa{
 			limpa()
         	}
         	senao{
-            	escreva("Digite a hora de entrada: ")
+            	escreva("\n\nDigite a hora de entrada: ")
             	leia(hr_entrada)
             	entrada[indice] = hr_entrada
             	//traduzir de real para cadeia
@@ -409,6 +434,9 @@ programa{
 
             	escreva("Total de horas: ")
             	hr_total = hr_saida - hr_entrada
+            	se (hr_total <= 0){
+            		hr_total *= -1
+            	}
             	escreva(hr_total, "\n")
             	
             
@@ -418,10 +446,10 @@ programa{
         }
     	}
     }
-   	funcao inteiro verificarResposta(cadeia resposta){
+   	funcao inteiro verificarResposta(cadeia respostaVerificada){
         inteiro respostaInteiro 
-        se(t.cadeia_e_inteiro(resposta, 10)){
-            respostaInteiro = t.cadeia_para_inteiro(resposta, 10)
+        se(t.cadeia_e_inteiro(respostaVerificada, 10)){ //perguntar o que significa o 10
+            respostaInteiro = t.cadeia_para_inteiro(respostaVerificada, 10)
             retorne respostaInteiro
         }
         senao{
@@ -429,7 +457,35 @@ programa{
             retorne 0 
         }
     }	
-   	funcao testarQntdColaboradores(){
+	funcao listaDeColaboradores(){
+
+		se (total_colaboradores == 0){
+			testarQntdColaboradores()
+			
+		}
+		senao{
+		limpa()
+		escreva("LISTA DE COLABORADORES\n")
+		u.aguarde(1000)
+		para (inteiro i = 0; i < maxColaboradores; i++){
+			para(inteiro j = 0; j < maxColaboradores; j++){
+			se(nomes[i] !=""){
+	        	
+			escreva("\nNome: ",nomes[i])
+			escreva("\nCpf: ",cpfs[i])  
+			escreva("\nSalário: ",salarios[i])   
+			escreva("\n")
+			u.aguarde(300)
+			pare
+			}
+			}
+		}
+		u.aguarde(3000)
+		limpa()
+		}
+		
+    }
+    	funcao testarQntdColaboradores(){
 		se (total_colaboradores == 0){
 				limpa()
 				escreva("*Nenhum colaborador cadastrado para dar continuidade na ação selecionada!*")
@@ -439,28 +495,6 @@ programa{
 				limpa()
 		}
     }	
-	funcao listaDeColaboradores(){
-
-	limpa()
-	escreva("LISTA DE COLABORADORES")
-	u.aguarde(1000)
-	para (inteiro i = 0; i < maxColaboradores; i++){
-		para(inteiro j = 0; j < maxColaboradores; j++){
-		se(nomes[i] !=""){
-        	
-		escreva("\nNome: ",nomes[i])
-		escreva("\nCpf: ",cpfs[i])  
-		escreva("\nSalário: ",salarios[i])   
-		escreva("\n")
-		u.aguarde(300)
-		pare
-        
-		}
-		}
-	}
-	u.aguarde(3000)
-	limpa()
-    }
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -468,8 +502,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3151; 
- * @DOBRAMENTO-CODIGO = [107, 176, 236, 336, 352, 369, 420, 431, 441];
+ * @POSICAO-CURSOR = 5768; 
+ * @DOBRAMENTO-CODIGO = [239, 349, 365, 382, 448, 459, 487];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
