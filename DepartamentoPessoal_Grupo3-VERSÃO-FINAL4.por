@@ -304,7 +304,7 @@ programa{
     }	
 	funcao registrarPonto() {
 		cadeia cpf
-		inteiro indice = -1
+		inteiro indice =0 
 		real hr_entrada, hr_saida, hr_total,hr_extra
 		caracter res
 		limpa()
@@ -318,7 +318,7 @@ programa{
  		escreva("\nDigite o CPF do colaborador: ")
 		leia(cpf)
 			para (inteiro i = 0; i < total_colaboradores; i++){
-				se (cpfs[i] == cpf){ //fazer cpf aceitar cadeia
+				se (cpfs[i] == cpf){ 
 					indice = i
 				pare
 				}
@@ -336,23 +336,20 @@ programa{
 	            	escreva("\n\nDigite a hora de entrada: ")
 	            	leia(hr_entrada)
 	            	entrada[indice] = hr_entrada
-	            	//traduzir de real para cadeia
-	
+	            		
 	            	escreva("Digite a hora de saída: ")
 	            	leia(hr_saida)
 	            	saida[indice] = hr_saida
-	            	//traduzir de real para cadeia
-	
-	            	escreva("Total de horas: ")
+	            			            	
 	            	hr_total = hr_saida - hr_entrada
 	            	horaTotal[indice] = hr_total
-	            	escreva(hr_total, "\n")
+	            	escreva("Total de horas: ",hr_total, "\n")
 	            	
-	            	escreva("Horas Extras: ",horaExtra[indice])
 	            	hr_extra = hr_total - 8
-	            	horaExtra[indice] = hr_extra
-	            
-	            	escreva("Ponto registrado com sucesso!\n")
+	            	horaExtra[indice] = hr_extra      
+	            	escreva("Horas Extras: ",horaExtra[indice])
+	            	
+	            	escreva("\n\nPonto registrado com sucesso!\n")
 	            	u.aguarde(500)	            	
 	        	}
 			escreva("\n\nDejesar Registra novo ponto?\n[1] para sim [2] para não ")
@@ -455,8 +452,8 @@ programa{
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12735; 
- * @DOBRAMENTO-CODIGO = [17, 95, 157, 229, 271, 287, 304, 369, 379];
+ * @POSICAO-CURSOR = 4906; 
+ * @DOBRAMENTO-CODIGO = [157, 229, 271, 287, 366, 376, 392];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
